@@ -1,0 +1,5 @@
+TAC 0 7
+CCG 2
+GAT 5
+GGA 4
+ACT -1
