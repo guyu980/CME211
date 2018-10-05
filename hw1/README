@@ -36,10 +36,12 @@ My considerations in designing this test data are:
 3. Choose first 3 letters as the read aligns to reference twice.
 4. Choose 3 different start position (not the start) and choose 3 letters begin with each start position as the read aligns once.
 5. Choose a read which does not appear in the reference.
+The generating data code may not work correctly for all inputs, it needs the parameter "ref_length" divisible by 4.
+The processing data code can always work correctly.
 
 Question 2:
 The data may not be the exact disrtibution, because the generating procedure is a random event.
-But 15% / 75% / 10% are expectations of porpotion of each type reads.
+But 15% / 75% / 10% are expectations of proportion of each type reads.
 Other factors may affect the exact dirtibution like:
 If there are some repetions in the first 75% of reference, then the generated align_1 reads may align twice or even more times.  
 
