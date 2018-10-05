@@ -85,7 +85,7 @@ Thus, if we choose reads align once in this part, it may actually align to refer
 But if the length of read is large enough (like 50), the probability of this situation is very low.
 
 Question 2:
-According to th result, the complexity is almost o(n). Thus, the estimate time to align the data for a human is:
+According to th result, the complexity is almost o(mn). Thus, the estimate time to align the data for a human is:
 3 * (reference_length * number of reads) / (10000 * 6000) s
 
 Question 3:
