@@ -1,1 +1,90 @@
-It's HW1.
+Yu Gu, 06287399, HW1
+
+Part 2:
+
+Writeup:
+
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 generatedata.py 1000 600 50 ref_1.txt reads_1.txt
+reference length: 1000
+number reads: 600
+read length: 50
+aligns 0: 0.16333333333333333
+aligns 1: 0.7483333333333333
+aligns 2: 0.08833333333333333
+elapsed time: 0.017354488372802734
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 generatedata.py 10000 6000 50 ref_2.txt reads_2.txt
+reference length: 10000
+number reads: 6000
+read length: 50
+aligns 0: 0.1535
+aligns 1: 0.7495
+aligns 2: 0.097
+elapsed time: 0.14471983909606934
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 generatedata.py 100000 60000 50 ref_3.txt reads_3.txt
+reference length: 100000
+number reads: 60000
+read length: 50
+aligns 0: 0.151
+aligns 1: 0.7497333333333334
+aligns 2: 0.09926666666666667
+elapsed time: 1.4690330028533936
+
+Question 1:
+My considerations in designing this test data are:
+1. Generate first 7 letters of reference randomly and make sure the first 3 letters just occur once.
+2. Copy the first 3 letters of generated reference and add them to the end.
+3. Choose first 3 letters as the read aligns to reference twice.
+4. Choose 3 different start position (not the start) and choose 3 letters begin with each start position as the read aligns once.
+5. Choose a read which does not appear in the reference.
+
+Question 2:
+The data may not be the exact disrtibution, because the generating procedure is a random event.
+But 15% / 75% / 10% are expectations of porpotion of each type reads.
+Other factors may affect the exact dirtibution like:
+If there are some repetions in the first 75% of reference, then the generated align_1 reads may align twice or even more times.  
+
+Question 3:
+About 3 hours.
+
+
+
+
+
+Part 3:
+
+Writen up:
+
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 processdata.py ref_1.txt reads_1.txt align_1.txt
+reference length: 1000
+number reads: 600
+aligns 0: 0.16333333333333333
+aligns 1: 0.7483333333333333
+aligns 2: 0.08833333333333333
+elapsed time: 0.0045626163482666016
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 processdata.py ref_2.txt reads_2.txt align_2.txt
+reference length: 10000
+number reads: 6000
+aligns 0: 0.1535
+aligns 1: 0.7495
+aligns 2: 0.097
+elapsed time: 0.2913014888763428
+guyu@rice05:/farmshare/user_data/guyu/cme211-guyu980/hw1$ python3 processdata.py ref_3.txt reads_3.txt align_3.txt
+reference length: 100000
+number reads: 60000
+aligns 0: 0.151
+aligns 1: 0.7496833333333334
+aligns 2: 0.09931666666666666
+elapsed time: 29.957236289978027
+
+Question 1:
+These two distributions may not always match.
+Because when randomly generating first 75% part of reference, there may be some repetions that are already longer than the length of reads.
+Thus, if we choose reads align once in this part, it may actually align to reference twice or even more.
+But if the length of read is large enough (like 50), the probability of this situation is very low.
+
+Question 2:
+According to th result, the complexity is almost o(n). Thus, the estimate time to align the data for a human is:
+3 * (reference_length * number of reads) / (10000 * 6000) s
+
+Question 3:
+About 1.5 hours.
