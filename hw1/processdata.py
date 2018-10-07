@@ -2,7 +2,7 @@ import sys
 import time
 
 # Print useful message if no arguments given
-if len(sys.argv) < 3:
+if len(sys.argv) < 4:
     print("Usage:")
     print("  $ python3 processdata.py <ref_file> <reads_file> <align_file>")
     sys.exit()
