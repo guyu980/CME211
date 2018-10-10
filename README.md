@@ -1,2 +1,5 @@
 # cme211-guyu980
-cme211-guyu980 created by GitHub Classroom
+Yu Gu
+06287399
+Insititute for Computational and Mathematical Engineering
+Stanfrod University
