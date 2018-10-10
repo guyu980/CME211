@@ -1,1 +1,70 @@
-It's hw2.
+Yu Gu, 06287399, HW2
+
+Part 1:
+
+Writeup:
+
+Question 1:
+My considerations when creating the test data are:
+1. All 10 users have rated movie 1, 7 of them rated movie 2, 6 of them rated movie 3.
+2. Only 4 users rated both movie 2 and movie 3.
+3 Average rating of the third one is higher than the first, and the second is lowest.
+
+Question 2:
+Yes. One feature from the real data is that both user id and movie id are not consecutive integers.
+The second feature is that the data is not in particular order.
+
+Question 3:
+Yes. Assume that user_thresh is 5, so I don’t need to calculate the similarity between movie 2 and 3.
+Just manually calculate the similarity between (movie 1, movie 2) and (movie 1, movie 3).
+
+
+
+Part 2:
+
+Writeup:
+
+$ python3 similarity.py ml-100k/u.data similarities.txt
+Input MovieLens file: ml-100k/u.data
+Output file for similarity data: similarities.txt
+Minimum number of common users: 5
+Read 100000 lines with total of 1682 movies and 943 users
+Computed similarities in 40.37840723991394 seconds
+
+$ head -10 similarities.txt
+1 (918,0.9105,5)
+2 (1056,1.0000,5)
+3 (1081,0.9771,5)
+4 (35,0.8035,6)
+5 (976,0.9331,5)
+6 (279,0.9598,5)
+7 (968,0.9974,7)
+8 (590,0.8647,6)
+9 (113,0.9645,5)
+10 (1202,0.9724,5)
+
+$ python3 similarity.py ml-100k/u.data similarities.txt 10
+Input MovieLens file: ml-100k/u.data
+Output file for similarity data: similarities.txt
+Minimum number of common users: 10
+Read 100000 lines with total of 1682 movies and 943 users
+Computed similarities in 33.553714990615845 seconds
+
+$ head -10 similarities.txt
+1 (426,0.7550,28)
+2 (1248,0.8203,11)
+3 (985,0.8475,10)
+4 (1203,0.7414,12)
+5 (535,0.8177,11)
+6 (242,0.8732,12)
+7 (1058,0.8066,11)
+8 (805,0.8498,15)
+9 (612,0.8395,16)
+10 (718,0.8019,10)
+
+My program has 5 functions:
+The first one is to preprocess data, generate movie list and dictionaries of ratings and users for each movie.
+The second one is to calculate the similarity of two movies.
+The third one is to calculate the similarity for all movie pairs.
+The fourth one is to generate output result.
+The last one is the main function of whole program.
