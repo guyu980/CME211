@@ -8,7 +8,7 @@ Question 1:
 My considerations when creating the test data are:
 1. All 10 users have rated movie 1, 7 of them rated movie 2, 6 of them rated movie 3.
 2. Only 4 users rated both movie 2 and movie 3.
-3 Average rating of the third one is higher than the first, and the second is lowest.
+3. Average rating of the third one is higher than the first, and the second is lowest.
 
 Question 2:
 Yes. One feature from the real data is that both user id and movie id are not consecutive integers.
