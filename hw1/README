@@ -85,8 +85,16 @@ Thus, if we choose reads align once in this part, it may actually align to refer
 But if the length of read is large enough (like 50), the probability of this situation is very low.
 
 Question 2:
+#--writeup_0
+#--Good complexity analysis, you could have tried to explain briefly why it scaled like that, and produced the actual result for the human genome, whose size 
+#--is given in the writeup.
+#--START
 According to th result, the complexity is almost o(mn). Thus, the estimate time to align the data for a human is:
 3 * (reference_length * number of reads) / (10000 * 6000) s
-
+#--END
 Question 3:
 About 1.5 hours.
+
+#--writeup_0
+#--The writeup shows a good comprehension of the issues at stake, and produces precise answers to the questions. Good job !
+#--END

@@ -1,0 +1,67 @@
+FILE:          README
+WRITEUP        
+
+COMMENTS:
+-Good complexity analysis, you could have tried to explain briefly why it scaled like that, and produced the actual result for the human genome, whose size
+-is given in the writeup.
+
+RELEVANT CODE:
+According to th result, the complexity is almost o(mn). Thus, the estimate time to align the data for a human is:
+3 * (reference_length * number of reads) / (10000 * 6000) s
+
+
+
+--------------------------
+FILE:          README
+WRITEUP        
+
+COMMENTS:
+-The writeup shows a good comprehension of the issues at stake, and produces precise answers to the questions. Good job !
+
+                  
+
+
+--------------------------
+FILE:          processdata.py
+CORRECTNESS    
+
+COMMENTS:
+-Even though this work, why do you first compute the number of
+-times each read appears, and then find them again to output the position ?
+-You basically perform the same read twice, which is suboptimal...
+
+                  
+
+
+--------------------------
+FILE:          processdata.py
+CORRECTNESS    
+
+COMMENTS:
+-Even if you have a suboptimality, your program outputs the correct result in a decent time. Good job !
+
+                  
+
+
+--------------------------
+FILE:          processdata.py
+STYLE          
+
+COMMENTS:
+-Your coding style is easy to follow, with good comments and clear variable naminf. Great !
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: mrivet, GitHub ID: maximeRivet1
+###################################################
+STYLE SCORE:                              +
+###################################################
+WRITEUP SCORE:                            +
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.

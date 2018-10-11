@@ -41,14 +41,18 @@ t3 = time.time()
 # Process data into aligns and caculate elapsed time
 timeStart = time.time()
 aligns = []
-
+#--correctness_0
+#--Even though this work, why do you first compute the number of 
+#--times each read appears, and then find them again to output the position ?
+#--You basically perform the same read twice, which is suboptimal...
+#-_START
 for read in reads:
     position = ref.find(read)
     align = read + ' ' + str(position)
     if ref.find(read, position+1) >= 0:
         align += ' ' + str(ref.find(read, position+1))
     aligns.append(align)
-
+#--END
 timeEnd = time.time()
 timeElapsed = timeEnd - timeStart
 
@@ -65,3 +69,11 @@ print("aligns 1: {}".format(naligns_1/nreads))
 print("aligns 2: {}".format(naligns_2/nreads))
 print("elapsed time: {}".format(timeElapsed))
 
+
+#--correctness_0
+#--Even if you have a suboptimality, your program outputs the correct result in a decent time. Good job !
+#--END
+
+#--style_0
+#--Your coding style is easy to follow, with good comments and clear variable naminf. Great !
+#--END
