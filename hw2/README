@@ -20,6 +20,8 @@ Just manually calculate the similarity between (movie 1, movie 2) and (movie 1, 
 
 
 
+
+
 Part 2:
 
 Writeup:
@@ -29,41 +31,41 @@ Input MovieLens file: ml-100k/u.data
 Output file for similarity data: similarities.txt
 Minimum number of common users: 5
 Read 100000 lines with total of 1682 movies and 943 users
-Computed similarities in 40.37840723991394 seconds
+Computed similarities in 40.985596895217896 seconds
 
 $ head -10 similarities.txt
-1 (918,0.9105,5)
-2 (1056,1.0000,5)
-3 (1081,0.9771,5)
-4 (35,0.8035,6)
-5 (976,0.9331,5)
-6 (279,0.9598,5)
-7 (968,0.9974,7)
-8 (590,0.8647,6)
-9 (113,0.9645,5)
-10 (1202,0.9724,5)
+1 (918, 0.910505, 5)
+2 (1056, 0.999981, 5)
+3 (1081, 0.977052, 5)
+4 (35, 0.803500, 6)
+5 (976, 0.933080, 5)
+6 (279, 0.959757, 5)
+7 (968, 0.997421, 7)
+8 (590, 0.864694, 6)
+9 (113, 0.964494, 5)
+10 (1202, 0.972429, 5)
 
 $ python3 similarity.py ml-100k/u.data similarities.txt 10
 Input MovieLens file: ml-100k/u.data
 Output file for similarity data: similarities.txt
 Minimum number of common users: 10
 Read 100000 lines with total of 1682 movies and 943 users
-Computed similarities in 33.553714990615845 seconds
+Computed similarities in 36.48733711242676 seconds
 
 $ head -10 similarities.txt
-1 (426,0.7550,28)
-2 (1248,0.8203,11)
-3 (985,0.8475,10)
-4 (1203,0.7414,12)
-5 (535,0.8177,11)
-6 (242,0.8732,12)
-7 (1058,0.8066,11)
-8 (805,0.8498,15)
-9 (612,0.8395,16)
-10 (718,0.8019,10)
+1 (426, 0.754971, 28)
+2 (1248, 0.820321, 11)
+3 (985, 0.847466, 10)
+4 (1203, 0.741372, 12)
+5 (535, 0.817678, 11)
+6 (242, 0.873221, 12)
+7 (1058, 0.806556, 11)
+8 (805, 0.849839, 15)
+9 (612, 0.839511, 16)
+10 (718, 0.801860, 10)
 
 My program has 5 functions:
-The first one is to preprocess data, generate movie list and dictionaries of ratings and users for each movie.
+The first one is to preprocess data, generate movie list and dictionaries of ratings for each movie.
 The second one is to calculate the similarity of two movies.
 The third one is to calculate the similarity for all movie pairs.
 The fourth one is to generate output result.
