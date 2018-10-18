@@ -1,0 +1,41 @@
+FILE:          README
+WRITEUP        
+
+COMMENTS:
+-Well done!
+
+                  
+
+
+--------------------------
+FILE:          similarity.py
+STYLE          
+
+COMMENTS:
+-Don't forget to insert line breaks to avoid long lines.
+
+                  
+
+
+--------------------------
+FILE:          similarity.py
+CORRECTNESS    
+
+COMMENTS:
+-Good job!
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: ruilinli, GitHub ID RuilinLi
+###################################################
+STYLE SCORE:                              +
+###################################################
+WRITEUP SCORE:                            +
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.

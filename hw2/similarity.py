@@ -146,3 +146,11 @@ def main():
     return
 
 main()
+
+#--style_0
+#--Don't forget to insert line breaks to avoid long lines.
+#--END
+
+#--correctness_0
+#--Good job!
+#--END
