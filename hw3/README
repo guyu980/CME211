@@ -1,1 +1,26 @@
-it's hw3
+The target of this class is to compute some parameters of a airfoil by panel point data and 
+pressure coefficient data. Specifically, we want to calculate the chord length, the lift coefficient 
+and stagnation point under different degree of attack.
+
+To deal with this problem, I divide the whole process into several abstract parts, 
+design method for each part, and store some results in the class as internal data 
+which can be used later, this is called abstraction and encapsulation.
+
+The init method as a main function taking all the steps below.
+1. Load the coordinate and pressure coefficient data.
+    Input directory and return xy and cp data
+    At this part, I write error messages to check 3 types of errors.
+    a) the input directory is invalid, which defined by os.path.isdir(inputdir) is False
+    b) xy or cp data not found in the directory, which defined by list from glob.glob() is empty
+    c) error in reading file, which defined by having trouble when ‘try:’ open(file)
+2. Compute the chord length by coordinate data.
+    Input xy data and return chord
+3. Do pressure coefficient decomposition for each panel, then calculate total Cartesian force
+coefficients by sum them up.
+    Input cp data and return sum(cx) and sum(cy)
+4. Compute lift coefficient by  total Cartesian force coefficients.
+    Input cx, cy and alpha data, return cl 
+5. Find stagnation point.
+    In put xy and cp data, return list contained coordinate and cp of a stagnation point
+6. The last __repr__ method is to build a string of summary of the result.
+
