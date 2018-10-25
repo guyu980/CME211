@@ -19,7 +19,13 @@ class Airfoil():
         self.cl = {}
         self.stagnation_pt = {}
         # Strip '/' first and then add back in case that input directory doesn't have '/'
+#--correctness_0
+#--Be careful, strip strips the / at the end and the beginning of the path !
+#--If the path starts with a / it makes your code fail...
+#--Try using rstrip instead !
+#--START
         xy, cp = self.load_data(inputdir.strip('/')+'/')
+#--END
         self.chord = self.compute_chord(xy)
         for alpha in cp:
             cx, cy = self.cp_decomposition(xy, cp[alpha])
@@ -73,10 +79,17 @@ class Airfoil():
                     cp[alpha] = [float(x[0]) for x in cp[alpha][1:]]
         except:
             raise RuntimeError("Error in reading cp data file")
-
+#--style_0
+#--Do you return them instead of storing them to save some storage space in your object ?
+#--If yes that's a good reason, else you should have used attributes to make it last !
+#--START
         return xy, cp
+#--END
 
-
+#--style_0
+#--Does this function need the self argument ? 
+#--You can consider using a @staticmethod here !
+#--START
     def compute_chord(self, xy):
         """ Compute the chord length by xy data
 
@@ -89,7 +102,7 @@ class Airfoil():
         # Get leading and tailing edge point
         leading, trailing = x.index(max(x)), x.index(min(x))
         return math.sqrt(sum([(xy[leading][i] - xy[trailing][i]) ** 2 for i in range(2)]))
-
+#--END
 
     def cp_decomposition(self, xy, cp):
         """ Do pressure coefficient decomposition for each panel, calculate total Cartesian force coefficients
@@ -159,3 +172,17 @@ class Airfoil():
 
         return summary
 
+#--correctness_0
+#--Apart from a small mistake in the handling of the paths, your code works great !
+#--Good job !
+#--END
+
+#--style_0
+#--Your code shows a good understanding of OOP and a good decomposition into methods.
+#--If it is a deliberate choice not to store cp and xy as attributes, then most of your 
+#--methods are in fact static methods that do not require the self argument. 
+#--If this is not deliberate, you should have considered storing them as attributes.
+#--As a personal comment, I prefer having the init as clean as possible (i.e. only declaring my attributes
+#--and calling methods). You could have added a load function and a compute function to clean the init.
+#--Overall, your code is good, well done !
+#--END

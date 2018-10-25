@@ -2,10 +2,14 @@ The target of this class is to compute some parameters of a airfoil by panel poi
 pressure coefficient data. Specifically, we want to calculate the chord length, the lift coefficient 
 and stagnation point under different degree of attack.
 
+#--writeup_0
+#--This is not really what you do, as you choose not to store most of the data.
+#--You could have been more explicit on why you did not store cp and xy !
+#--START
 To deal with this problem, I divide the whole process into several abstract parts, 
 design method for each part, and store some results in the class as internal data 
 which can be used later, this is called abstraction and encapsulation.
-
+#--END
 The init method as a main function taking all the steps below.
 1. Load the coordinate and pressure coefficient data.
     Input directory and return xy and cp data
@@ -24,3 +28,7 @@ coefficients by sum them up.
     In put xy and cp data, return list contained coordinate and cp of a stagnation point
 6. The last __repr__ method is to build a string of summary of the result.
 
+#--writeup_1
+#--Your writeup shows a good presentation of your code. However, it does not justify your design choices,
+#--nor does it developp a lot on the concepts of abstraction, encapsulation or decomposition.
+#--END
