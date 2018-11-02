@@ -22,9 +22,20 @@ class Vector:
         self.__data[i] = val
 
 ## Your code here ##
+
+#--design_2
+#--Accesing internal member from Vector class in
+#-- areEqual function.
+#--END
+
+#--functionality_3
+#--Due to floating point errors, it is possible that both your SparseMatrix and DenseMatrix
+#--return the correct solution but u.__data[i] == v.__data[i] returns False, so you should
+#--allow a small error.
+#--START
 def areEqual(u, v):
     return u._Vector__data == v._Vector__data
-        
+#--END        
 
 
 class Matrix:
@@ -201,3 +212,7 @@ if __name__ == "__main__":
         print("Sparse matvec verified!")
     else:
         print("Sparse matvec verification failed!")
+
+#--functionality_0
+#--Great job!
+#--END

@@ -1,0 +1,58 @@
+FILE:          README
+WRITEUP        
+
+COMMENTS:
+-Missing writeups :(
+
+POINTS DEDUCTED: 10
+
+
+--------------------------
+FILE:          exam1.py
+DESIGN         
+
+COMMENTS:
+-Accesing internal member from Vector class in
+-areEqual function.
+
+POINTS DEDUCTED: 2
+
+
+--------------------------
+FILE:          exam1.py
+FUNCTIONALITY  
+
+COMMENTS:
+-Due to floating point errors, it is possible that both your SparseMatrix and DenseMatrix
+-return the correct solution but u.__data[i] == v.__data[i] returns False, so you should
+-allow a small error.
+
+RELEVANT CODE:
+def areEqual(u, v):
+    return u._Vector__data == v._Vector__data
+
+POINTS DEDUCTED: 3
+
+
+--------------------------
+FILE:          exam1.py
+FUNCTIONALITY  
+
+COMMENTS:
+-Great job!
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: ruilinli, GitHub ID RuilinLi
+###################################################
+FUNCTIONALITY SCORE:                     52
+###################################################
+DESIGN SCORE:                            33
+###################################################
+WRITEUP SCORE:                            0
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.
