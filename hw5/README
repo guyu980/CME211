@@ -1,0 +1,28 @@
+1. Brief statement of the problem:
+Our task is to use the “right hand” rule to get out of a maze, which is always to follow the right hand wall until you exit the maze.
+Our maze data sets have the number of maze rows and columns on the first row, and the coordinates of walls on the rows below.
+
+2. Description of C++ code:
+(1) First I initialize the maze and solution as static array with size [1000][1000], [1000][2], and also some other variables..
+The initialized array are all 0.
+
+(2) Then confirm that appropriate command line arguments were provided and if not provide a usage message and exit. 
+The 2 input arguments are stored as string maze_file and solution_file.
+
+(3) Read the maze data by std::ifstream f(maze_file), verify that there is enough storage available for maze matrix.
+Assign values to the maze array, where1 indicates the road and -1 indicates the presence of wall.
+
+(4) Find the maze entrance in the first row and initialize the current state: 
+Here, x, y are the current position. Direction is the current moving direction: 0 = down, 1 = left, 2 = up, 3 = right.
+
+(5) Before reach the last row, choose new moving direction by current state. The rule is to choose current moving direction in order:
+Turn right -> Move forward -> Turn left -> Move backward. E.g. turn right if valid. If not, move forward if valid. If not, turn left if valid. Else, move backward.
+
+(6) Finally store current position to solution array and write into file.
+
+3. Description of Python code:
+(1) First load maze and solution data, generate maze matrix with 0 indicates valid road, -1 indicates the walls.
+(2) Checking process will consider cases below:
+      (a) Whether enter the maze via the first row.
+      (b) Whether reach the last row.
+      (c) During each step, whether the current step is out of bounds/ cross the wall/ making invalid movement.
