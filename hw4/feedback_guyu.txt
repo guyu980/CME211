@@ -1,0 +1,31 @@
+FILE:          README.tex
+WRITEUP        
+
+COMMENTS:
+-Well done!
+
+                  
+
+
+--------------------------
+FILE:          truss.py
+CORRECTNESS    
+
+COMMENTS:
+-Great work!
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: ruilinli, GitHub ID RuilinLi
+###################################################
+STYLE SCORE:                              +
+###################################################
+WRITEUP SCORE:                            +
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.
