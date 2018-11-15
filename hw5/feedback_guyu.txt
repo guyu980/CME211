@@ -1,0 +1,104 @@
+FILE:          README
+WRITEUP        
+
+COMMENTS:
+-Your writeup is a good description of your code, well done !
+
+                  
+
+
+--------------------------
+FILE:          checksoln.py
+STYLE          
+
+COMMENTS:
+-Try indexing in numpy array using syntax solution[0, 0] as it avoids an extra copy of the line under the hood.
+
+RELEVANT CODE:
+if solution[0][0] != 0:
+        return False
+
+                  
+
+
+--------------------------
+FILE:          checksoln.py
+STYLE          
+
+COMMENTS:
+-you could have vectorized this step using (solution[1:] - solution[:-1]).abs().sum(axis=1), and then checked that the array is full of ones.
+
+RELEVANT CODE:
+move = sum([abs(x) for x in solution[i] - solution[i-1]])
+            if move != 1:
+                return False
+
+                  
+
+
+--------------------------
+FILE:          checksoln.py
+CORRECTNESS    
+
+COMMENTS:
+-Your program checks the main issues in a maze escape, well done !
+
+                  
+
+
+--------------------------
+FILE:          checksoln.py
+STYLE          
+
+COMMENTS:
+-You could have used slightly more of the numpy vectorized possibilities, but your code is quite efficient and pleasant to read !
+
+                  
+
+
+--------------------------
+FILE:          mazesolver.cpp
+CORRECTNESS    
+
+COMMENTS:
+-Be careful, this only works since 0 is the default value of int. Try filling with 1 with this method and you would only get the first element set...
+
+RELEVANT CODE:
+int maze[size][size] = {0}, solution[size][2] = {0};
+
+                  
+
+
+--------------------------
+FILE:          mazesolver.cpp
+CORRECTNESS    
+
+COMMENTS:
+-Your code works quite well. However, the extra storage for the solution is not needed
+-as you can directly print the output in the output file.
+
+                  
+
+
+--------------------------
+FILE:          mazesolver.cpp
+STYLE          
+
+COMMENTS:
+-Your program is easy to read, well written and commented ! Good job !
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: mrivet, GitHub ID: maximeRivet1
+###################################################
+STYLE SCORE:                              +
+###################################################
+WRITEUP SCORE:                            +
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.

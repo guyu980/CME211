@@ -5,7 +5,11 @@
 
 int main(int argc, char *argv[]) {
     
+//--correctness_0
+//--Be careful, this only works since 0 is the default value of int. Try filling with 1 with this method and you would only get the first element set...
+//--START
     int maze[size][size] = {0}, solution[size][2] = {0};
+//--END
     int x = 0, y = 0, direction = 0, n_sol = 0;
     int x_d, y_d, x_w, y_w, x_a, y_a, x_s, y_s;
     int n_row, n_col;
@@ -37,7 +41,7 @@ int main(int argc, char *argv[]) {
             f >> i >> j;
             maze[i][j] = -1;
         }
-        
+
         // 1 indicates the road
         for (int i = 0; i < n_row; i++) {
             for (int j = 0; j < n_col; j++) {
@@ -110,3 +114,11 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
+//--correctness_0
+//--Your code works quite well. However, the extra storage for the solution is not needed
+//--as you can directly print the output in the output file.
+//--END
+
+//--style_0
+//--Your program is easy to read, well written and commented ! Good job !
+//--END

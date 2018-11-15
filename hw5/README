@@ -26,3 +26,7 @@ Turn right -> Move forward -> Turn left -> Move backward. E.g. turn right if val
       (a) Whether enter the maze via the first row.
       (b) Whether reach the last row.
       (c) During each step, whether the current step is out of bounds/ cross the wall/ making invalid movement.
+
+#--writeup_0
+#--Your writeup is a good description of your code, well done !
+#--END

@@ -20,9 +20,12 @@ def checkSol(maze, solution):
     n_row, n_col = maze.shape
     
     # Not enter the maze via the first row
+#--style_0
+#--Try indexing in numpy array using syntax solution[0, 0] as it avoids an extra copy of the line under the hood.
+#--START
     if solution[0][0] != 0:
         return False
-    
+#--END
     # Not reach the last row
     if solution[-1][0] != n_row - 1:
         return False
@@ -39,10 +42,13 @@ def checkSol(maze, solution):
         
         # Invalid movement
         if i > 0:
+#--style_0
+#--you could have vectorized this step using (solution[1:] - solution[:-1]).abs().sum(axis=1), and then checked that the array is full of ones.
+#--START
             move = sum([abs(x) for x in solution[i] - solution[i-1]])
             if move != 1:
                 return False
-        
+#--END
     return True
 
 
@@ -65,3 +71,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#--correctness_0
+#--Your program checks the main issues in a maze escape, well done !
+#--END
+
+#--style_0
+#--You could have used slightly more of the numpy vectorized possibilities, but your code is quite efficient and pleasant to read !
+#--END
