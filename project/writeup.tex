@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\geometry{left=3cm, right=3cm, top=2cm, bottom=2cm}
+\title{Write-up}
+\author{Yu Gu}
+\date{\today}
+\setlength{\parindent}{0pt}\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item \textbf{Pseudo-code for Conjugate Gradient (CG) algorithm}
+\begin{algorithm}
+\caption{CG algorithm} 
+\begin{algorithmic}
+    \STATE \textbf{Initialize}: $u_0$
+    \STATE $r_0=b-Au_0$
+    \STATE $p_0=r_0$
+    \STATE $niter=0$
+    \WHILE{$niter<nitermax$}
+        \STATE $niter=niter + 1$
+        \STATE $\alpha_n={r_n}^Tr_n/{p_n}^TAp_n$
+        \STATE $u_{n+1}=u_n+\alpha_np_n$
+        \STATE $r_{n+1}=r_n-\alpha_nAp_n$
+        \IF{$\left\|r_{n+1}\right\|_2/\left\|r_0\right\|_2<threshold$}
+            \STATE \textbf{break}
+        \ENDIF
+        \STATE $\beta_n={r_{n+1}}^Tr_{n+1}/{r_n}^Tr_n$
+        \STATE $p_{n+1}=r_{n+1}+\beta_np_n$
+    \ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+
+\item \textbf{Function design}\\
+Noticing that in this CG algorithm, we need to deal with some computations between constant, vectors and matrices. Thus, I design six methods below to help us solve these problems.
+\begin{itemize}
+\item{\emph{matvecDot}:} dot product of matrix with CSR format matrix and vector\\
+Input 4 double type std::vector val, row\_ptr, col\_idx represents CSR format matrix, and vec. Output is a double type std::vector.
+\item{\emph{vecAdd}:} add two vectors\\
+Input 2 double type std::vector vec1, vec2. Output is a double type std::vector.
+\item{\emph{vecSubtract}:} subtract two vectors\\
+Input 2 double type std::vector vec1, vec2. Output is a double type std::vector.
+\item{\emph{vecMul}:} multiply constant to vector\\
+Input 1 double type number a, 1 double type std::vector vec. Output is a double type std::vector.
+\item{\emph{vecDot}:} dot product of two vectors\\
+Input 2 double type std::vector vec1, vec2. Output is a double type number.
+\item{\emph{vecNorm}:} 2-norm of a vector\\
+Input 1 double type std::vector vec. Output is a double type number.
+\end{itemize}
+
+\end{enumerate}
+\end{document}
