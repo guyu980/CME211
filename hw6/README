@@ -1,0 +1,23 @@
+To deal with this image processing problem, I design a class image with a constructor and 4 methods, where the input argument is 
+the filename of input image.
+
+1. In the constructor of this class,  it initializes the string variable input_file, and uses the function ReadGrayscaleJPEG(input_file, img) 
+to read the image data into multi-array. Then initialize m and n, which are the number of rows and columns of image data.
+
+2. The method image::Save() has an argument as output filename. It uses the function WriteGrayscaleJPEG(output_file, img) 
+to save current image data into jpg file.
+
+3.  The method image::Convolution() has 3 argument as input data, output data and kernel. If the function is called but kernel is not odd / 
+kernel is not square/ kernel size is less than 3 / input and output size don’t match, the program will report corresponding error message and exit.
+The idea of implementing convolution is: 
+(1) Generate an extended image matrix by edge padding. Add (kernel_size-1)/2 rows or columns for each side of the origin matrix. 
+The added value are the same with the value of closest edge entry in the origin matrix.
+(2) Sum up the product between kernel and the extended matrix, and get a processed matrix with the same size as the original matrix.
+
+4. The method image::BoxBlur has an argument as kernel size. Then it generates box blur kernel matrix and implement convolution.
+
+5. The method image::Sharpness() has no argument. It generates a kernel that approximates the a discrete Laplacian operator. 
+Then implement convolution on current image and find the largest entry of processed matrix as sharpness.
+
+
+
