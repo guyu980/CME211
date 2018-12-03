@@ -5,6 +5,9 @@
 
 #include "matvecops.hpp"
 
+//--style_0
+//--Try to add more comments to your code.
+//--END
 /* Dot product of matrix with CSR format matrix and vector */
 std::vector<double> matvecDot(std::vector<double> val,
                               std::vector<int>    row_ptr,

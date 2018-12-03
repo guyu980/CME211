@@ -1,0 +1,64 @@
+FILE:          CGSolver.cpp
+STYLE          
+
+COMMENTS:
+-There are no comments!
+
+POINTS DEDUCTED: 1
+
+
+--------------------------
+FILE:          makefile
+WRITEUP        
+
+COMMENTS:
+-Instead of doing the compilation in one big line it is better to break up your
+-makefile. This will make it easier to deal with the larger collections of .cpp files.
+-You needed to add at least a rule to create object files from cpp files.
+
+RELEVANT CODE:
+main: main.cpp CGSolver.hpp COO2CSR.hpp matvecops.hpp
+	$(CXX) $(CXXFLAGS) -o main main.cpp CGSolver.cpp COO2CSR.cpp matvecops.cpp
+
+POINTS DEDUCTED: 1
+
+
+--------------------------
+FILE:          matvecops.cpp
+STYLE          
+
+COMMENTS:
+-Try to add more comments to your code.
+
+                  
+
+
+--------------------------
+FILE:          matvecops.hpp
+STYLE          
+
+COMMENTS:
+-You pass all your arguments by copy. This will create a lot of unnecessary
+-overhead. Whenever you can you should always pass by reference.
+
+RELEVANT CODE:
+std::vector<double> matvecDot(std::vector<double> val,
+                              std::vector<int>    row_ptr,
+                              std::vector<int>    col_idx,
+                              std::vector<double> vec);
+
+POINTS DEDUCTED: 1
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: remmelt, GitHub ID Remmelt12
+###################################################
+STYLE SCORE:                              -
+###################################################
+WRITEUP SCORE:                           ok
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.

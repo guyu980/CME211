@@ -4,11 +4,15 @@
 #include <vector>
 
 /* Dot product of matrix with CSR format matrix and vector */
+//--style_1
+//--You pass all your arguments by copy. This will create a lot of unnecessary
+//--overhead. Whenever you can you should always pass by reference.
+//--START
 std::vector<double> matvecDot(std::vector<double> val,
                               std::vector<int>    row_ptr,
                               std::vector<int>    col_idx,
                               std::vector<double> vec);
-
+//--END
 /* Add two vectors */
 std::vector<double> vecAdd(std::vector<double> vec1,
                            std::vector<double> vec2);
