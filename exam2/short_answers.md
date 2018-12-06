@@ -53,4 +53,4 @@ const here means the pointer points to a constant and can not be changed.
 
 
 1.5
-The outcom will be error. The last index for arr[3] is 2.
+It will output 0. Because the last index for arr is 2. Thus there is no guarrante what arr[3] will be like.
