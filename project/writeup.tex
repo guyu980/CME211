@@ -4,13 +4,18 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \geometry{left=3cm, right=3cm, top=2cm, bottom=2cm}
-\title{Write-up}
+\title{CME211 Final Project}
 \author{Yu Gu}
 \date{\today}
 \setlength{\parindent}{0pt}\begin{document}
 \maketitle
 
+
 \begin{enumerate}
+\item \textbf{Introduction}\\
+In this project, I develop a program to solve the 2D heat equation on a simple geometry using a sparse matrix solver written in C++. First, I implement a sparse matrix solver in C++, which includes the sparse matrix class and functions for relevant operations of sparse matrices and vectors. Then I form the system of heat equations for a specified geometry, solving the system, and writing Python code to visualize the results.\\
+
+
 \item \textbf{Pseudo-code for Conjugate Gradient (CG) algorithm}
 \begin{algorithm}
 \caption{CG algorithm} 
@@ -33,22 +38,75 @@
 \end{algorithmic}
 \end{algorithm}
 
-\item \textbf{Function design}\\
+
+\item \textbf{Design for helper functions}\\
 Noticing that in this CG algorithm, we need to deal with some computations between constant, vectors and matrices. Thus, I design six methods below to help us solve these problems.
 \begin{itemize}
-\item{\emph{matvecDot}:} dot product of matrix with CSR format matrix and vector\\
-Input 4 double type std::vector val, row\_ptr, col\_idx represents CSR format matrix, and vec. Output is a double type std::vector.
-\item{\emph{vecAdd}:} add two vectors\\
-Input 2 double type std::vector vec1, vec2. Output is a double type std::vector.
-\item{\emph{vecSubtract}:} subtract two vectors\\
-Input 2 double type std::vector vec1, vec2. Output is a double type std::vector.
-\item{\emph{vecMul}:} multiply constant to vector\\
-Input 1 double type number a, 1 double type std::vector vec. Output is a double type std::vector.
-\item{\emph{vecDot}:} dot product of two vectors\\
-Input 2 double type std::vector vec1, vec2. Output is a double type number.
-\item{\emph{vecNorm}:} 2-norm of a vector\\
-Input 1 double type std::vector vec. Output is a double type number.
+\item{\emph{matvecDot}:} Dot product of matrix with CSR format matrix and vector.
+\item{\emph{vecAdd}:} Add two vectors.
+\item{\emph{vecSubtract}:} Subtract two vectors.
+\item{\emph{vecMul}:} Multiply constant to vector.
+\item{\emph{vecDot}:} Dot product of two vectors.
+\item{\emph{vecNorm}:} 2-norm of a vector.\\
 \end{itemize}
 
+\item \textbf{OOP design for sparse matrix class}\\
+The basic idea for the sparse matrix class is to store a sparse matrix in COO format, providing methods to resize the matrix dimensions and add new entries. After inputing all entries of the matrix, you can use a method to convert the COO format into CSR format. There are 5 private members which define the detail of a sparse matrix. \emph{i\_idx, j\_idx, a} are the values of non-zero entries and their positions, which is stored in COO format first and can be converted to CSR format. \emph{ncols, nrows} define the shape of the martix. There are 7 main methods:
+\begin{itemize}
+\item{\emph{Resize}:} Method to modify sparse matrix dimensions.
+\item{\emph{AddEntry}:} Method to add entry to matrix in COO format.
+\item{\emph{ConvertToCSR}:} Method to convert COO matrix to CSR format using provided function.
+\item{\emph{vecMul}:} Method to perform sparse matrix vector multiplication using CSR formatted matrix.
+\item{\emph{get\_i\_idx, get\_j\_idx, get\_a}:} Method to get the parameters of the sparse matrix.\\
+\end{itemize}
+
+
+\item \textbf{OOP design for heat equation class}\\
+The basic idea for the 2D heat equation class is to setup by inputing a filename which contains the basic information about the system, then solve the system and store the result solution into output file. There are 3 private members, the sparse matrix \emph{A}, constant in system \emph{b} and solution \emph{x}.There are 5 main methods:
+\begin{itemize}
+\item{\emph{Setup}:} Method to setup as Ax=b system.\\
+The idea of setup is that each point in the geometry has one corresponding function in the system, and the function for each point is only related to its neighbor point in 4 directions. Here we treated points on the left and right boundaries as the periodic boundary, which means they always  have the same temperature if they are in same row. Upside and downside boundaries are treated as given information, where the hot isothermal boundary (upside) is constant, and cold isothermal boundary (downside) is the inverted Gaussian temperature computed by x coordinate. Store the system in COO format and convert to CSR format later.
+\item{\emph{Solver}:} Method to solve system using CGsolver.
+\item{\emph{T\_x}:} Method to compute the inverted Gaussian temperature.
+\item{\emph{is\_equal}:} Method to judge whether two vectors are equal (whether Ax = b in this case).
+\item{\emph{get\_x}:} Method to get current solution x.\\
+\end{itemize}
+
+
+\item \textbf{Users guide}
+\begin{itemize}
+\item First use \textbf{make} to compile the whole program.
+\item Then use \textbf{./main inputfile.txt solution}. It will show whether the CG solver converges.
+\item If converged, \textbf{solution\_converge.txt} will be the final result x and stored in the same directory with the program cpp file.
+\item Next, use \textbf{python3 postprocess.py inputfile.txt solution\_converge.txt} to implement postprocessing and visualization.\\
+\end{itemize}
+
+
+\item \textbf{Visualization for example data}
+\begin{figure}
+\centering
+\includegraphics[width=8cm, height=6cm]{input0.png}
+\caption{Temperature distribution of input0}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=8cm, height=6cm]{input1.png}
+\caption{Temperature distribution of input1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=8cm, height=6cm]{input2.png}
+\caption{Temperature distribution of input2}
+\end{figure}
+
 \end{enumerate}
+
+\newpage
+\begin{thebibliography}{99}
+\bibitem{foo1} cme211-project-part-1.pdf
+\bibitem{foo2} cme211-project-part-2.pdf
+\end{thebibliography}
+
 \end{document}

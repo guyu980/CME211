@@ -19,7 +19,12 @@ int CGSolver(std::vector<double> &val,
              std::vector<int>    &col_idx,
              std::vector<double> &b,
              std::vector<double> &x,
+             std::string         &output_file,
              double              tol);
 
+/* Method to write current solution during iteration */
+void writeOuput(std::vector<double> &x,
+                std::string         &output_file,
+                int                 niter,
+                bool                is_converge);
 #endif /* CGSOLVER_HPP */
-
