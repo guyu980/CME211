@@ -9,6 +9,11 @@ using namespace std;
 
 class image {
     string input_file;
+    //--style_1
+    //--You should never make your underlying data a public attribute this
+    //--allows a user to change the image data in uncontrolled ways by for
+    //--example setting all the pixles to one value.
+    //--START
    public:
     image(string input_file);
     unsigned int m, n;
@@ -19,6 +24,7 @@ class image {
     void BoxBlur(unsigned int kernel_size);
     unsigned int Sharpness(void);
     void Save(string output_file);
+    //--END
 };
 
 #endif /* image_hpp */

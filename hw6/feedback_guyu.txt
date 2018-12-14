@@ -1,0 +1,58 @@
+FILE:          image.hpp
+STYLE          
+
+COMMENTS:
+-You should never make your underlying data a public attribute this
+-allows a user to change the image data in uncontrolled ways by for
+-example setting all the pixles to one value.
+
+RELEVANT CODE:
+public:
+    image(string input_file);
+    unsigned int m, n;
+    boost::multi_array<unsigned char, 2> img;
+    void Convolution(boost::multi_array<unsigned char, 2>& input,
+                     boost::multi_array<unsigned char, 2>& output,
+                     boost::multi_array<float, 2>& kernel);
+    void BoxBlur(unsigned int kernel_size);
+    unsigned int Sharpness(void);
+    void Save(string output_file);
+
+POINTS DEDUCTED: 1
+
+
+--------------------------
+FILE:          makefile
+WRITEUP        
+
+COMMENTS:
+-You needed to include an optimization flag to make the program run
+-fast. You also needed to write a rule to create object files from cpp files.
+-And remove these files with clean. Now you need to recompile all your code even if you change only
+-one small thing.
+
+RELEVANT CODE:
+CXXFLAGS := -O3 -std=c++11 -Wall -Wconversion -Wextra -pedantic
+LDFLAGS := -I/usr/include -L/usr/lib -ljpeg
+main: main.cpp hw6.hpp image.hpp
+	$(CXX) $(CXXFLAGS) main.cpp hw6.cpp image.cpp -o main $(LDFLAGS)
+
+.PHONY: clean
+clean:
+	$(RM) main
+
+POINTS DEDUCTED: 2
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: remmelt, GitHub ID Remmelt12
+###################################################
+STYLE SCORE:                             ok
+###################################################
+WRITEUP SCORE:                            -
+###################################################
+CORRECTNESS SCORE:                        +
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.
