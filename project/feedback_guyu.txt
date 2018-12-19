@@ -43,10 +43,10 @@ COMMENTS:
 GRADING TA                  
 SUNet ID: mrivet, GitHub ID: maximeRivet1
 ###################################################
-STYLE SCORE:                              2
+STYLE SCORE:                             ok
 ###################################################
-WRITEUP SCORE:                            3
+WRITEUP SCORE:                            +
 ###################################################
-CORRECTNESS SCORE:                        3
+CORRECTNESS SCORE:                        +
 ###################################################
 If you have any problem about grading result, please file an issue in your GitHub repo.
