@@ -13,8 +13,12 @@ void CashRegister::Print(void) {
     float left = change;
     
     for (int i = 0; i < 8; i++) {
+      //--correctness_5
+      //--change should be modified as you go through this loop
+      //--START
         x.push_back((int) (change / money[i]));
         left -= x[i];
+      //--END
         std::cout << money[i] << " : " << x[i] << std::endl;
     }
 }

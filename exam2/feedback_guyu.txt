@@ -1,0 +1,75 @@
+FILE:          CashRegister.cpp
+CORRECTNESS    
+
+COMMENTS:
+-change should be modified as you go through this loop
+
+RELEVANT CODE:
+x.push_back((int) (change / money[i]));
+        left -= x[i];
+
+POINTS DEDUCTED: 5
+
+
+--------------------------
+FILE:          Inventory.cpp
+CORRECTNESS    
+
+COMMENTS:
+-For some reason your item_qty[item] is always 0 on our test cases,
+-even when it should not.
+
+RELEVANT CODE:
+if (item_qty.count(item) == 0 || item_qty[item] == 0) {
+        std::cout << "No stock of this item!" << std::endl;
+        return 0;
+    }
+
+POINTS DEDUCTED: 10
+
+
+--------------------------
+FILE:          Inventory.cpp
+STYLE          
+
+COMMENTS:
+-Warnings generated.
+
+POINTS DEDUCTED: 2
+
+
+--------------------------
+FILE:          README.md
+WRITEUP        
+
+COMMENTS:
+-Well done!
+
+                  
+
+
+--------------------------
+FILE:          short_answers.md
+CORRECTNESS    
+
+COMMENTS:
+
+
+RELEVANT CODE:
+1.4
+
+POINTS DEDUCTED: 2
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: wetstone, GitHub ID jhwetstone
+###################################################
+STYLE SCORE:                             28
+###################################################
+WRITEUP SCORE:                           10
+###################################################
+CORRECTNESS SCORE:                       54
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.

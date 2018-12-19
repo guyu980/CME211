@@ -16,3 +16,7 @@ The input argument of the first Inventorry class is the invetory file name. It c
 
 The second class CashRegister has input arguement change.
 It only has one method Print to report changes in different types of money.
+
+#--writeup_0
+#--Well done!
+#--END

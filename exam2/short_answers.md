@@ -47,9 +47,11 @@ const here means the pointer points to a constant and can not be changed.
 *str++ means the pointer moves to the next element in str.
 
 
-
+#--correctness_2
+#--START
 1.4
 
+#--END
 
 
 1.5

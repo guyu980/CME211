@@ -41,10 +41,15 @@ int Inventory::AttemptExport(std::string item, int qty, float funds) {
     int qty_sell;
     
     /* Report message in extreme cases */
+    //--correctness_10
+    //--For some reason your item_qty[item] is always 0 on our test cases,
+    //--even when it should not.
+    //--START
     if (item_qty.count(item) == 0 || item_qty[item] == 0) {
         std::cout << "No stock of this item!" << std::endl;
         return 0;
     }
+    //--END
     
     if (qty < 0) {
         std::cout << "Client attempts to sell!" << std::endl;
@@ -118,3 +123,7 @@ float Inventory::Value(void) {
     
     return value;
 }
+
+//--style_2
+//--Warnings generated.
+//--END
