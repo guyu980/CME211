@@ -3,6 +3,10 @@
 
 #include <vector>
 
+//--correctness_0
+//--Your code does not compile without the include<string> flag...
+//--END
+
 /* Function that implements the CG algorithm for a linear system
  *
  * Ax = b

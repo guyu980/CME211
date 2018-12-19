@@ -169,3 +169,12 @@ int HeatEquation2D::is_equal(std::vector<double> vec1, std::vector<double> vec2,
 std::vector<double> HeatEquation2D::get_x(void) {
     return x;
 }
+
+//--correctness_0
+//--Your code meets the requirements and works well ! Be careful in your include statements !
+//--END
+
+//--style_1
+//--Your code is quite well written, but you are making a copy of all the arguments before solving. This is very inefficient and makes the use of the 
+//--object HeatEquation inefficient ! You should have adapter your CGSolver to be able to take a sparse matrix as input, saving a lot of copies !
+//--END

@@ -1,0 +1,52 @@
+FILE:          CGSolver.hpp
+CORRECTNESS    
+
+COMMENTS:
+-Your code does not compile without the include<string> flag...
+
+                  
+
+
+--------------------------
+FILE:          heat.cpp
+CORRECTNESS    
+
+COMMENTS:
+-Your code meets the requirements and works well ! Be careful in your include statements !
+
+                  
+
+
+--------------------------
+FILE:          heat.cpp
+STYLE          
+
+COMMENTS:
+-Your code is quite well written, but you are making a copy of all the arguments before solving. This is very inefficient and makes the use of the
+-object HeatEquation inefficient ! You should have adapter your CGSolver to be able to take a sparse matrix as input, saving a lot of copies !
+
+POINTS DEDUCTED: 1
+
+
+--------------------------
+FILE:          writeup.tex
+WRITEUP        
+
+COMMENTS:
+-Good writeup !
+
+                  
+
+
+--------------------------
+
+GRADING TA                  
+SUNet ID: mrivet, GitHub ID: maximeRivet1
+###################################################
+STYLE SCORE:                              2
+###################################################
+WRITEUP SCORE:                            3
+###################################################
+CORRECTNESS SCORE:                        3
+###################################################
+If you have any problem about grading result, please file an issue in your GitHub repo.
